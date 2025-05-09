@@ -49,6 +49,8 @@ Distribuição das probabilidades (considerando somente os que não são nulos):
 | [0.7, 0.8) 	| 22417 	| 1,9 	|
 | [0.6, 0.7) 	| 22156 	| 1,88 	|
 
+Obs: essa distribuição leva em consideração as probabilidades do modelo antigo que estão presentes na tabela de sites.ecommerce do banco de dados. É importante reforçar que o novo modelo foi executado APENAS para a base da Whois.
+
 ## Comparação com a tabela de e-commerce
 
 Domínios (considerando a coluna host do Whois e as colunas host e domínio da tabela de e-commerce):
@@ -101,7 +103,7 @@ fórmula => (probabilidade_novo_modelo - probabilidade_modelo_antigo) / probabil
 
 ### Comparação das predições (considerando somente os 555895 domínios disponíveis em ambas as bases)
 
-Threshold (limiar de decisão) utilizado nas probabilidades do modelo antigo = 0.5
+Threshold (limiar de decisão) utilizado nas probabilidades do modelo antigo = 0.5 (esse threshold foi utilizado na coluna de probabilidade da tabela sites.ecommerce com o resultado do modelo antigo)
 
 Threshold (limiar de decisão) utilizado nas probabilidades do modelo novo = 0.6
 
@@ -112,3 +114,5 @@ Análise dos que não estão nulos (516192):
 * Eram classificados como False pelo modelo antigo e agora é classificado como True pelo novo modelo: 1926 (0,373%)
 
 * A predição não mudou (continua sendo a mesma classe em ambos modelos): 469414 (90,938%)
+
+Obs: a predição do modelo antigo foi considerada usando a probabilidade do modelo antigo disponível na tabela sites.ecommerce e o threshold antigo.
